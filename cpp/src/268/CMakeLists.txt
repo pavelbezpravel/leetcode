@@ -6,6 +6,10 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(missing-number missing_number.cpp)
+target_compile_options(missing-number
+    PRIVATE
+        ${PAVELBEZPRAVEL_LEETCODE_CXX_COMPILER_FLAGS}
+)
 target_link_libraries(missing-number
     PRIVATE
         GTest::gtest_main

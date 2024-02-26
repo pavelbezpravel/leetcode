@@ -19,6 +19,12 @@ conan_cmake_install(
 )
 include(${CMAKE_BINARY_DIR}/conan_toolchain.cmake)
 
+# TODO [pavelbezpravel]: support Clang and MSVC.
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+    include(cmake/flags.compiler.gnu.cmake)
+endif()
+
+
 find_package(GTest 1.14.0 EXACT REQUIRED)
 
 enable_testing()
