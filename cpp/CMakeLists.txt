@@ -26,9 +26,4 @@ include(CTest)
 cmake_policy(SET CMP0057 NEW)  # https://gitlab.kitware.com/cmake/cmake/issues/18198
 include(GoogleTest)
 
-add_executable(solutions src/contains_duplicate.cpp)
-target_link_libraries(solutions
-    PRIVATE
-        GTest::gtest_main
-)
-gtest_discover_tests(solutions)
+add_subdirectory(src)
